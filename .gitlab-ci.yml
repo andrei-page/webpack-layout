@@ -1,0 +1,19 @@
+image: docker:git
+services:
+  - docker:dind
+
+stages:
+  - build
+  - release
+
+variables:
+  CONTAINER_IMAGE: registry.gitlab.com/upstream.llc/video-host/uncensored-front:$CI_BUILD_REF_NAME
+
+release:
+  stage: release
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t $CONTAINER_IMAGE .
+    - docker push $CONTAINER_IMAGE
+  only:
+    - master

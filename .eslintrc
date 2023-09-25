@@ -1,0 +1,44 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "quotes": [1, "single"],
+    "semi": [1, "always"],
+    "strict": 1,
+    "no-undef": 0,
+    "@typescript-eslint/explicit-function-return-type": 0
+  },
+  "ignorePatterns": [
+    "build/*",
+    "config/*",
+    "*.js"
+  ],
+  "globals": {
+    "__": true,
+    "NODE_ENV": true
+  },
+  "overrides": [{
+    "files": [ "*.d.ts" ],
+    "rules": {
+      "no-unused-vars": 0
+    }
+  }]
+}

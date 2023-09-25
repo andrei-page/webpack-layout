@@ -1,0 +1,65 @@
+@use "./media" as *;
+
+.container {
+  width: 100%;
+  padding: 0 6vw;
+  @include md {
+    padding: 0 16px;
+  }
+}
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+input:-webkit-autofill {
+  font-family: "CeraPro";
+  -webkit-text-fill-color: var(--color-gray);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-gray) inset;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "CeraPro";
+  color: var(--color-black);
+  background: var(--color-white);
+  min-height: 100%;
+  &.is-hidden {
+    overflow: hidden;
+  }
+}
+
+main {
+  width: 100%;
+}
+
+h1 {
+  display: block;
+  margin: 0 auto;
+  font-family: "TT-Travels";
+
+  padding: 4vw;
+  font-weight: 500 !important;
+  font-size: 2.7vw !important;
+  line-height: 3.5vw !important;
+}
+h2 {
+  font-size: 2vw;
+  line-height: 2vw;
+  font-family: "TT-Travels";
+  display: block;
+  font-weight: 500;
+  color: var(--color-black);
+}
